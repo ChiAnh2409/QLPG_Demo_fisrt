@@ -1,8 +1,7 @@
 # Demo hoàn tất các chức năng cơ bản.
 # WebApp Quản Lý Phòng Gym
 Use C# ASP.NET, SQL server.
-Dự án bao gồm:
-
+- Dự án bao gồm:
 - Trang giao diện dành cho mọi người xem thông tin chung về Phòng Gym.
 - Trang giao diện đăng ký tập thử 1 ngày miễn phí 
 - Trang quản lý bao gồm:
