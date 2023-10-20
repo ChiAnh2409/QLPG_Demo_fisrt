@@ -23,11 +23,11 @@ Giao diện thông tin bổ ích ![image](https://github.com/ChiAnh2409/QLPG_Dem
 Click vào để xem chi tiết ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/ae89541a-5dca-4909-bea7-b1e210357968)
 
 Chi tiết Treadmill Exercise bao gồm: 
- - Thực đơn ăn uống phù hợp cho Treadmill Exercise  ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/5827282f-4475-4185-a896-bab9ea5e8e65)
- - Lợi ích của Treadmill Exercise ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/6635efc4-b47c-4a81-a495-14bf3a997ee4)
+ - Thực đơn ăn uống phù hợp và lợi ích của Treadmill Exercise  ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/5827282f-4475-4185-a896-bab9ea5e8e65)
+  ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/6635efc4-b47c-4a81-a495-14bf3a997ee4)
 Giao diện login 
-
 ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/5d47ceaa-959b-4c3e-8420-466691089a8b)
+
 Giao diện trang quản lý ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/f57f30de-7062-44bb-8936-91a791eb9133)
 Giao diện trang quản lý gói tập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/db7dbb60-555a-4351-9487-6f1526799b23)
 Giao diện trang Đăng Ký Gói Tập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/bccd2739-288e-4229-8e1c-7767b9405415)
