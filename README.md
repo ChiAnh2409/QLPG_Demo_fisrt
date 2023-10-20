@@ -21,8 +21,9 @@ Giao diện đăng ký tập thử ![image](https://github.com/ChiAnh2409/QLPG_D
 Giao diện các phần tập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/96524d5a-eb74-4057-b799-e4ca5472237f)
 Giao diện thông tin bổ ích ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/cca3ca4d-612b-42ba-a9af-1d08306714dc)
 Click vào để xem chi tiết ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/ae89541a-5dca-4909-bea7-b1e210357968)
+
 Chi tiết Treadmill Exercise bao gồm: 
- - Thực đơn ăn uống phù hợp cho Treadmill Exercise  ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/dd5825c2-6a54-470b-81d9-9bc85f23f797)
+ - Thực đơn ăn uống phù hợp cho Treadmill Exercise  ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/5827282f-4475-4185-a896-bab9ea5e8e65)
  - Lợi ích của Treadmill Exercise ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/6635efc4-b47c-4a81-a495-14bf3a997ee4)
 Giao diện login 
 
