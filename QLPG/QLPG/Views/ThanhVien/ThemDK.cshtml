@@ -1,0 +1,351 @@
+﻿@model QLPG.Models.ThanhVien
+@{
+    ViewBag.Title = "ThemDK";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title> Đăng Ký Tập Thử Miễn Phí </title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/css/Homepage.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand">
+                <i style='font-size:28px' class='fas'>&#xf21e;</i>  @*heart-icon*@
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+
+                    <li class="nav-item"> <a class="nav-link" href="/Account/Index">Quay lại</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Free-->
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Đăng Ký Tập Thử 1 Ngày Miễn Phí</h2>
+                <h3 class="section-subheading text-muted">Khuyến mãi sẽ áp dụng từ 01/09/2023 - 01/02/2024</h3>
+            </div>
+            <div class="field d-flex justify-content-center" id="registrationForm">
+                <form method="post" action="@Url.Action("ThemDK", "ThanhVien")">
+                    @Html.AntiForgeryToken() <!-- Đảm bảo sử dụng AntiForgeryToken để bảo vệ khỏi tấn công CSRF -->
+                    <div class="field">
+                        <label for="name" class="form-label">Họ và Tên</label>
+                        @Html.TextBoxFor(model => model.TenTV, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="disabledSelect" class="form-label">Chọn phần muốn tập thử</label>
+                        @Html.DropDownListFor(model => model.TenGT, new List<SelectListItem>
+                        {
+                            new SelectListItem { Text = "Treadmill Exercise", Value = "Treadmill Exercise" },
+                            new SelectListItem { Text = "Cycling", Value = "Cycling" },
+                            new SelectListItem { Text = "Functional Training", Value = "Functional Training" }
+                        }, new { @class = "form-select" })
+                    </div>
+                    <div class="field">
+                        <label for="sdt" class="form-label">Số Điện Thoại</label>
+                        @Html.TextBoxFor(model => model.SDT, new { @class = "form-control" })
+                    </div>
+                    <div class="field">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                        <div id="emailHelp" class="form-text">Lưu ý: hệ thống sẽ gửi thông báo khi đã đăng ký thành công về email của bạn !!!</div>
+                    </div>
+                    <div class="field text-center">
+                        <button type="submit" class="btn btn-primary" value="Thêm">Đăng Ký Ngay</button>
+                    </div>
+                    @if (!string.IsNullOrEmpty(TempData["SuccessMessage"] as string))
+                    {
+                        <div id="successMessage" class="alert alert-success text-center">
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </section>
+    <!--Message dis-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Kiểm tra xem có thông báo thành công và ẩn nó sau 5 giây
+            var successMessage = $("#successMessage");
+            if (successMessage.length) {
+                setTimeout(function () {
+                    successMessage.fadeOut(500);
+                }, 3000); // 3 giây (3000 ms)
+            }
+        });
+    </script>
+
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Thông tin phần tập</h2>
+                <h3 class="section-subheading text-muted">Các phần tập có thể tập luyện tại phòng Gym </h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i style='font-size:50px' class='fas fa-stack-1x fa-inverse'>&#xf70c;</i>  @*walking*@
+                    </span>
+                    <h4 class="my-3">Treadmill Exercise</h4>
+                    <p class="text-muted"> Hoạt động cung cấp lợi ích cho sức khỏe, bao gồm cải thiện sức khỏe tim mạch, tăng cường hệ thống hô hấp, giảm stress, cải thiện tâm trạng và hỗ trợ giảm cân.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i style='font-size:50px' class='fas fa-stack-1x fa-inverse'>&#xf84a;</i>  @*Cycling*@
+                    </span>
+                    <h4 class="my-3">Cycling</h4>
+                    <p class="text-muted">Hoạt động tập luyện trên xe đạp tĩnh (exercise bike) hoặc xe đạp địa hình giúp tăng cường sức khỏe tim mạch, đốt cháy calo và cải thiện sức bền.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i style='font-size:38px' class='fas fa-stack-1x fa-inverse'>&#xf7e4;</i>  @*Fire*@
+                    </span>
+                    <h4 class="my-3">Functional Training</h4>
+                    <p class="text-muted">Hoạt động tập luyện tập trung vào cải thiện khả năng chức năng của cơ thể, bao gồm các bài tập đa dụng và các dụng cụ như TRX, Bosu, Kettlebell, giúp cải thiện cơ bắp cốt lõi, cân bằng và linh hoạt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Thông tin bổ ích</h2>
+                <h3 class="section-subheading text-muted">Đọc thêm để có thể hiểu thêm về lợi ích các phần tập của chúng tôi</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/Treadmill.jpg" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Treadmill Exercise</div>
+                            <div class="portfolio-caption-subheading text-muted">Tập luyện trên máy chạy bộ điện Fitness</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 2-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/Cycling.jpg" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Exercise bike</div>
+                            <div class="portfolio-caption-subheading text-muted">Tập luyện trên xe đạp tĩnh</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 3-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/Training.jpg" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Functional Training</div>
+                            <div class="portfolio-caption-subheading text-muted">Tập luyện tập trung vào cải thiện khả năng chức năng của cơ thể</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; My Website 2023</div>
+                <div class="col-lg-push-8 text-lg-end">
+                    <a class="link-dark text-decoration-none" href="#!">See you soon <i style='font-size:14px' class='fas'>&#xf004;</i> </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Lợi ích và thực đơn tham khảo cho cả tuần</h2>
+                                <p class="item-intro text-muted">Khung giờ mở cửa: 9:00 AM - 21:00 PM </p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/about/treadmill schedule.png" />
+                                <p>
+                                    Treadmill Exercise có lợi ích cho sức khỏe và thể chất như sau:
+                                </p>
+                                <p>
+                                    <a class="navbar-brand">
+                                        <i style='font-size:15px' class='far'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                    </a> Tăng cường sức khỏe tim mạch, giảm cân và kiểm soát cân nặng, tăng cường sức mạnh cơ bắp, cải thiện thể lực, tăng cường tinh thần, cải thiện sức kháng, kiểm soát đường huyết, cải thiện tư duy và tập trung.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Lưu ý:</strong>
+                                        để đạt được những lợi ích này, hãy đảm bảo tập luyện đúng cách, tuân thủ lịch trình tập luyện. Chúc bạn thành công !!!
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Lợi ích và thực đơn tham khảo cho cả tuần</h2>
+                                <p class="item-intro text-muted">Khung giờ mở cửa: 9:00 AM - 21:00 PM </p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/about/cycling schedule.png" />
+                                <p>
+                                    Cycling có lợi ích cho sức khỏe và thể chất như sau:
+                                </p>
+                                <p>
+                                    <a class="navbar-brand">
+                                        <i style='font-size:15px' class='far'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                    </a> Tăng cường sức khỏe tim mạch, giảm cân và kiểm soát cân nặng, tăng cường sức mạnh cơ bắp, cải thiện thể lực và sức bền - khả năng cân bằng và điều hướng, giảm căng thẳng và tăng cường tinh thần - nguy cơ các bệnh mãn tính và đặc biêt là giúp thúc đẩy sự phát triển của cơ mắt và thị lực.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Lưu ý:</strong>
+                                        để đạt được những lợi ích này, hãy đảm bảo tập luyện đúng cách, tuân thủ lịch trình tập luyện. Chúc bạn thành công !!!
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 3 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Lợi ích và thực đơn tham khảo cho cả tuần</h2>
+                                <p class="item-intro text-muted">Khung giờ mở cửa: 9:00 AM - 21:00 PM </p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/about/training  schedule.png" />
+                                <p>
+                                    Functional Training có lợi ích cho sức khỏe và thể chất như sau:
+                                </p>
+                                <p>
+                                    <a class="navbar-brand">
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                        <i style='font-size:15px' class='fas'>&#xf004;</i>  @*heart-icon*@
+                                    </a> Tăng cường khả năng linh hoạt - cân bằng và ổn định - tinh thần và tạo động lực - giúp các vận động viên cải thiện hiệu suất thể thao và giảm nguy cơ chấn thương, giảm căng thẳng và căng cơ, cải thiện chất lượng cuộc sống, thích nghi với mọi hoàn cảnh môi trường khắc nghiệp.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Lưu ý:</strong>
+                                        Tập luyện chức năng có thể được tùy chỉnh để phù hợp với mục tiêu và nhu cầu riêng của từng người, từ người mới tập luyện đến các vận động viên chuyên nghiệp. Để đạt được những lợi ích này, hãy đảm bảo tập luyện đúng cách, tuân thủ lịch trình tập luyện. Chúc bạn thành công !!!
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- link use ajax -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/js/JavaScript.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

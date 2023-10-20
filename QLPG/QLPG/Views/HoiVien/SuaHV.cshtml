@@ -1,0 +1,68 @@
+﻿@model QLPG.ViewModel.MultipleData
+@{
+    ViewBag.Title = "SuaHV";
+    Layout = null;
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sửa Hội Viên</title>
+    <link href="~/css/goitap.css" rel="stylesheet" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Sửa Hội Viên
+        </div>
+        <form method="post" action="SuaHV"  enctype="multipart/form-data">
+            @foreach (var item in Model.hoiViens)
+            {
+                <div>
+                    <label>Tên Hội Viên</label>
+                    <select id="disease-list" name="id_TV">
+                        @foreach (var item2 in Model.vien)
+                        {
+                            <option value="@item2.id_TV" @(item2.id_TV == item.id_TV ? "selected" : "")>@item2.TenTV</option>
+                        }
+                    </select>
+                </div>
+                <label>Tình Trạng</label>
+                <div class="field">
+                    <select class="form-control" name="TinhTrang" value="@item.TinhTrang">
+                        <option name="TinhTrang" value="true">Hoạt Động</option>
+                        <option name="TinhTrang" value="false">Hết Hạn</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <input type="date" name="NgaySinh" value="@item.NgaySinh">
+                    <label>Ngày Sinh</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="CCCD" value="@item.CCCD">
+                    <label>Căn cước công dân</label>
+                </div>
+                <div class="field">
+                    <input type="file" name="HinhAnh" />
+                    <label>Hình Ảnh</label>
+                </div>
+                <div class="field">
+                    <input type="submit" value="Sửa">
+                </div>
+                <div class="signup-link">
+                    <a href="/HoiVien/HoiVien">Quay về trang chủ</a>
+                </div>
+                @*<label>Mã Hội Viên</label>*@
+                <div class="field">
+                    <input style="display:none" type="text" name="id_HV" value="@item.id_HV" readonly>
+                </div>
+                @*<label>Ngày gia nhập</label>*@
+                <div class="field">
+                    <input style="display:none" type="date" name="NgayGiaNhap" value="@item.NgayGiaNhap?.ToString(" yyyy-MM-dd")" readonly>
+                </div>
+            }
+        </form>
+    </div>
+</body>
+</html>

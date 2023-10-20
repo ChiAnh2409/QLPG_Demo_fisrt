@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPG1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_Role" Type="int" />
+    <Property Name="Username" Type="varchar" MaxLength="500" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="500" />
+    <Property Name="SDT" Type="char" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Pass" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BuoiTap">
+    <Key>
+      <PropertyRef Name="id_BT" />
+    </Key>
+    <Property Name="id_BT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_HV" Type="int" />
+    <Property Name="NgayThamGia" Type="datetime" />
+    <Property Name="DaDiemDanh" Type="bit" />
+  </EntityType>
+  <EntityType Name="ChiTietDK_GoiTap">
+    <Key>
+      <PropertyRef Name="id_CTDKGoiTap" />
+    </Key>
+    <Property Name="id_CTDKGoiTap" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_GT" Type="int" />
+    <Property Name="id_HV" Type="int" />
+    <Property Name="NgayBatDau" Type="datetime" />
+    <Property Name="NgayKetThuc" Type="datetime" />
+    <Property Name="ThanhTien" Type="money" />
+  </EntityType>
+  <EntityType Name="GoiTap">
+    <Key>
+      <PropertyRef Name="id_GT" />
+    </Key>
+    <Property Name="id_GT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenGoiTap" Type="nvarchar" MaxLength="700" />
+    <Property Name="ThoiGianHieuLuc" Type="datetime" />
+    <Property Name="ChiPhi" Type="money" />
+  </EntityType>
+  <EntityType Name="HoiVien">
+    <Key>
+      <PropertyRef Name="id_HV" />
+    </Key>
+    <Property Name="id_HV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_TV" Type="int" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="255" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="CCCD" Type="char" MaxLength="100" />
+    <Property Name="TinhTrang" Type="bit" />
+    <Property Name="NgayGiaNhap" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="id_Role" />
+    </Key>
+    <Property Name="id_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Roles" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="ThanhVien">
+    <Key>
+      <PropertyRef Name="id_TV" />
+    </Key>
+    <Property Name="id_TV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTV" Type="nvarchar" MaxLength="500" />
+    <Property Name="SDT" Type="varchar" MaxLength="250" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="TenGT" Type="nvarchar" MaxLength="700" />
+    <Property Name="NgayTao" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Account__id_Role__267ABA7A">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id_Role" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="id_Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BuoiTap__id_HV__300424B4">
+    <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="0..1" />
+    <End Role="BuoiTap" Type="Self.BuoiTap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoiVien">
+        <PropertyRef Name="id_HV" />
+      </Principal>
+      <Dependent Role="BuoiTap">
+        <PropertyRef Name="id_HV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietDK__id_GT__32E0915F">
+    <End Role="GoiTap" Type="Self.GoiTap" Multiplicity="0..1" />
+    <End Role="ChiTietDK_GoiTap" Type="Self.ChiTietDK_GoiTap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoiTap">
+        <PropertyRef Name="id_GT" />
+      </Principal>
+      <Dependent Role="ChiTietDK_GoiTap">
+        <PropertyRef Name="id_GT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietDK__id_HV__33D4B598">
+    <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="0..1" />
+    <End Role="ChiTietDK_GoiTap" Type="Self.ChiTietDK_GoiTap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoiVien">
+        <PropertyRef Name="id_HV" />
+      </Principal>
+      <Dependent Role="ChiTietDK_GoiTap">
+        <PropertyRef Name="id_HV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoiVien__id_TV__2D27B809">
+    <End Role="ThanhVien" Type="Self.ThanhVien" Multiplicity="0..1" />
+    <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThanhVien">
+        <PropertyRef Name="id_TV" />
+      </Principal>
+      <Dependent Role="HoiVien">
+        <PropertyRef Name="id_TV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPG1ModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuoiTap" EntityType="Self.BuoiTap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiTietDK_GoiTap" EntityType="Self.ChiTietDK_GoiTap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoiTap" EntityType="Self.GoiTap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoiVien" EntityType="Self.HoiVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThanhVien" EntityType="Self.ThanhVien" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Account__id_Role__267ABA7A" Association="Self.FK__Account__id_Role__267ABA7A">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BuoiTap__id_HV__300424B4" Association="Self.FK__BuoiTap__id_HV__300424B4">
+      <End Role="HoiVien" EntitySet="HoiVien" />
+      <End Role="BuoiTap" EntitySet="BuoiTap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietDK__id_GT__32E0915F" Association="Self.FK__ChiTietDK__id_GT__32E0915F">
+      <End Role="GoiTap" EntitySet="GoiTap" />
+      <End Role="ChiTietDK_GoiTap" EntitySet="ChiTietDK_GoiTap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietDK__id_HV__33D4B598" Association="Self.FK__ChiTietDK__id_HV__33D4B598">
+      <End Role="HoiVien" EntitySet="HoiVien" />
+      <End Role="ChiTietDK_GoiTap" EntitySet="ChiTietDK_GoiTap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoiVien__id_TV__2D27B809" Association="Self.FK__HoiVien__id_TV__2D27B809">
+      <End Role="ThanhVien" EntitySet="ThanhVien" />
+      <End Role="HoiVien" EntitySet="HoiVien" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,675 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Website Gym Fish  </title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/css/Homepage.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand">
+                <i style='font-size:28px' class='fas'>&#xf21e;</i>  @*heart-icon*@
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#services">Phần tập</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Thiết bị</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Thông tin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Staff</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Account/Dangnhap">Login </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-heading text-uppercase">Welcome To Gym Fish ! </div>
+            <div class="masthead-subheading ">"Không chỉ là buổi tập luyện, mà còn là trải nghiệm."</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="/ThanhVien/ThemDK">Đăng ký tập thử</a>
+        </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Thông tin phần tập</h2>
+                <h3 class="section-subheading text-muted">Các phần tập có thể tập luyện tại phòng Gym </h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i style='font-size:50px' class='fas fa-stack-1x fa-inverse'>&#xf70c;</i>  @*walking*@
+                    </span>
+                    <h4 class="my-3">Treadmill Exercise</h4>
+                    <p class="text-muted"> Hoạt động cung cấp lợi ích cho sức khỏe, bao gồm cải thiện sức khỏe tim mạch, tăng cường hệ thống hô hấp, giảm stress, cải thiện tâm trạng và hỗ trợ giảm cân.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i style='font-size:50px' class='fas fa-stack-1x fa-inverse'>&#xf84a;</i>  @*Cycling*@
+                    </span>
+                    <h4 class="my-3">Cycling</h4>
+                    <p class="text-muted">Hoạt động tập luyện trên xe đạp tĩnh (exercise bike) hoặc xe đạp địa hình giúp tăng cường sức khỏe tim mạch, đốt cháy calo và cải thiện sức bền.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i style='font-size:38px' class='fas fa-stack-1x fa-inverse'>&#xf7e4;</i>  @*Fire*@
+                    </span>
+                    <h4 class="my-3">Functional Training</h4>
+                    <p class="text-muted">Hoạt động tập luyện tập trung vào cải thiện khả năng chức năng của cơ thể, bao gồm các bài tập đa dụng và các dụng cụ như TRX, Bosu, Kettlebell, giúp cải thiện cơ bắp cốt lõi, cân bằng và linh hoạt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Các thiết tại phòng Gym</h2>
+                <h3 class="section-subheading text-muted">Chuyên dụng và mạnh mẽ.</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/máy chạy bộ điện Fitness.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Running</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy chạy bộ điện Fitness</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 2-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/máy tập thể dục xe đạp.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Cardiovascular Exercise</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy tập thể dục xe đạp</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 3-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/máy tập cơ lưng xô IF9302.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Lat Machine</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy tập cơ lưng xô IF9302</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <!-- Portfolio item 4-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/may-tap-co-nguc.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Chest Press Machine</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy tập cơ ngực C1127</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 5-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/máy đạp chân IT1127.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Horizontal Leg Press Machine</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy đạp chân IT1127</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 6-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/máy đạp đùi.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Leg Extension Machine</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy đạp đùi A1127</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 7-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal7">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/máy chạy bộ Aguri.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Running</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy chạy bộ Aguri</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 8-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal8">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/máy đạp chân ngang.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Horizontal leg press sled</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy đạp chân ngang</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 9-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal9">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="~/assets/img/portfolio/xe đạp tập thể dục Air Bike.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Cardiovascular Exercise</div>
+                            <div class="portfolio-caption-subheading text-muted">Máy tập thể dục xe đạp Air Bike</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Thông tin</h2>
+                <h3 class="section-subheading text-muted">Giai đoạn phát triển của phòng Gym.</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/assets/img/about/1.jpg" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>2021-2023</h4>
+                            <h4 class="subheading">Giai đoạn thành lập</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Phòng Gym được thành lập bởi clb tập thể dục tại thành phố Hồ Chí Minh và sau đó được phát triển bởi Chi Anh, người đi đầu về việc luôn giữ cơ thể ở chế độ lành mạnh.</p></div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/assets/img/about/3.jpg" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>March 2022</h4>
+                            <h4 class="subheading">Giai đoạn phát triển</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Thu thập yêu cầu của khách hàng để mở thêm các gói tập đa dạng người học. Nhập thêm thiết bị góp phần nâng cao hiệu quả tập luyện.</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/assets/img/about/4.jpg" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>December 2023</h4>
+                            <h4 class="subheading">Giai đoạn thành lập trang Web trực tuyến</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Thành lập trang Web trực tuyến để nhiều khách hàng có thể tham khảo và biết được thông tin về phòng Gym một cách rõ ràng và tiện lợi hơn.</p></div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>
+                            <br />
+                            .-.
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Team-->
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+                <h3 class="section-subheading text-muted">Học tập và phát triển hơn nữa trong tương lai.</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mx-auto text-center">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="~/assets/img/team/Chi anh.jpg" alt="..." />
+                        <h4>Chi Anh</h4>
+                        <p class="text-muted">Người sáng lập</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/home" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/09chianh/" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/feed/" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">
+                        Luôn cô đơn nhưng cũng luôn nóng bỏng. Lạnh lẽo nhưng cũng ấm áp vỗ về.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; My Website 2023</div>
+                <div class="col-lg-push-8 text-lg-end">
+                    <a class="link-dark text-decoration-none" href="#!">See you soon <i style='font-size:14px' class='fas'>&#xf004;</i> </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Running</h2>
+                                <p class="item-intro text-muted">Máy chạy bộ điện Fitness</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/máy chạy bộ điện Fitness.jpg" alt="..." />
+                                <p>
+                                    Máy chạy bộ điện Fitness là một thiết bị tập luyện thể dục được sử dụng để nâng cao sức khỏe và cải thiện thể lực. Máy chạy bộ điện Fitness hoạt động bằng cách cho người tập chạy hoặc đi trên một băng chuyền di động được đặt trên một khung kim loại. Băng chuyền sẽ di chuyển theo tốc độ được chọn bởi người tập thông qua các nút điều khiển trên bàn tay hoặc màn hình cảm ứng.
+
+                                    Máy chạy bộ điện Fitness có nhiều tính năng khác nhau để tăng cường trải nghiệm tập luyện của người dùng, bao gồm màn hình hiển thị các thông số như tốc độ, quãng đường, thời gian tập luyện, năng lượng tiêu thụ, cường độ và độ dốc. Ngoài ra, nhiều máy chạy bộ điện Fitness cũng có các tính năng giảm xóc và đàn hồi, giúp giảm tác động lên khớp và gối của người tập.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Treadmill Exercise
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        01/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Cardiovascular Exercise</h2>
+                                <p class="item-intro text-muted">Máy tập thể dục xe đạp</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/máy tập thể dục xe đạp.jpg" alt="..." />
+                                <p>
+                                    Máy tập thể dục xe đạp là một thiết bị tập thể dục giúp người dùng tập luyện thể lực và giảm cân. Máy tập thể dục xe đạp thường được sử dụng trong phòng tập gym hoặc tại nhà. Nó được thiết kế với một chiếc ghế và một bánh xe đặt trước và sau để người dùng có thể ngồi và đạp xe.
+
+                                    Máy tập thể dục xe đạp có nhiều tính năng và chế độ tập khác nhau, từ chế độ tập nhẹ đến tập cường độ cao. Nó còn có thể được kết nối với các ứng dụng tập luyện để theo dõi quá trình tập luyện và đạt được mục tiêu sức khỏe của mình.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Cycling
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        01/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 3 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Lat Machine</h2>
+                                <p class="item-intro text-muted">Máy tập cơ lưng xô IF9302</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/máy tập cơ lưng xô IF9302.jpg" alt="..." />
+                                <p>
+                                    Máy tập cơ lưng xô là một thiết bị tập thể dục giúp người dùng tập trung vào việc tập luyện cơ lưng. Nó thường được sử dụng trong phòng tập gym hoặc tại nhà để nâng cao sức khỏe và cải thiện thể hình.
+
+                                    Máy tập cơ lưng xô được thiết kế với một chiếc ghế và một khung sắt, trong đó có đai định vị cho đầu và chân. Người dùng sẽ nằm nghiêng lên đầu và giữ chân trên đai để tập trung vào cơ lưng khi thực hiện các động tác xoay và uốn cong. Máy tập cơ lưng xô thường đi kèm với một hướng dẫn tập luyện để người dùng có thể tập luyện đúng cách và an toàn.
+
+                                    Tập luyện với máy tập cơ lưng xô có thể giúp tăng cường sức mạnh và linh hoạt của cơ lưng, cải thiện tư thế và giảm đau lưng. Nó cũng có thể giúp nâng cao khả năng thể chất và tăng cường sự kiên nhẫn và tập trung của người dùng.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Functional Training
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        01/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 4 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Chest Press Machine</h2>
+                                <p class="item-intro text-muted">Máy tập cơ ngực C1127</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/may-tap-co-nguc.jpg" alt="..." />
+                                <p>
+                                    Máy tập cơ ngực là một thiết bị tập thể dục giúp người dùng tập trung vào việc tập luyện cơ ngực, đặc biệt là cơ bụng trên và dưới. Nó thường được sử dụng trong phòng tập gym hoặc tại nhà để nâng cao sức khỏe và cải thiện thể hình.
+
+                                    Máy tập cơ ngực thường có thiết kế với một ghế và một khung sắt, trong đó có các tay nắm để người dùng tập trung vào cơ ngực khi thực hiện các động tác như đẩy tạ, kéo dây đàn hồi, hay xoay cơ ngực. Một số máy tập cơ ngực còn có thêm đai định vị để giữ cơ thể ổn định khi tập luyện. Máy tập cơ ngực thường đi kèm với một hướng dẫn tập luyện để người dùng có thể tập luyện đúng cách và an toàn.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Functional Training
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        11/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 5 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Horizontal Leg Press Machine</h2>
+                                <p class="item-intro text-muted">Máy đạp chân IT1127</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/máy đạp chân IT1127.jpg" alt="..." />
+                                <p>
+                                    Máy đạp chân là một thiết bị tập thể dục giúp người dùng tập trung vào việc tập luyện các cơ chân, đặc biệt là cơ đùi và bắp chân. Nó thường được sử dụng trong phòng tập gym hoặc tại nhà để nâng cao sức khỏe và cải thiện thể hình.
+
+                                    Máy đạp chân có thiết kế với một chỗ ngồi và hai bàn đạp, trong đó người dùng đặt chân lên để thực hiện các động tác đạp. Một số máy đạp chân có thêm điều chỉnh độ cứng của bàn đạp hoặc độ cao của chỗ ngồi để phù hợp với chiều cao và cân nặng của người dùng. Máy đạp chân thường đi kèm với một màn hình hiển thị thông tin về quãng đường đã đi, thời gian, tốc độ và lượng calo tiêu thụ.
+
+                                    Tập đạp chân bằng máy đạp chân giúp tăng cường sức mạnh cơ bắp, tăng cường sức chịu đựng và chịu lực của cơ chân, cải thiện sức khỏe tim mạch và đốt cháy calo giúp giảm cân.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Functional Training
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        01/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 6 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Leg Extension Machine</h2>
+                                <p class="item-intro text-muted">Máy đạp đùi A1127</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/máy đạp đùi.jpg" alt="..." />
+                                <p>Máy đạp đùi là một thiết bị tập luyện thể dục giúp tập trung vào vùng đùi và bắp chân. Máy đạp đùi thường có đế chân to và rộng, cho phép người tập đặt chân lên đó và thực hiện các động tác đạp. Ngoài ra, máy đạp đùi còn có đồng hồ đo thời gian, tốc độ, quãng đường và đốt cháy calo. Một số loại máy đạp đùi còn tích hợp thêm chức năng tăng cường cơ thể, giúp người tập có thể tăng cường sức mạnh và sức bền cơ thể.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Functional Training
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        11/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 7 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Running</h2>
+                                <p class="item-intro text-muted">Máy chạy bộ Aguri</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/máy chạy bộ Aguri.jpg" alt="..." />
+                                <p>Máy chạy bộ điện Aguri là một thiết bị tập luyện thể dục được sử dụng để nâng cao sức khỏe và cải thiện thể lực. Máy chạy bộ điện Fitness hoạt động bằng cách cho người tập chạy hoặc đi trên một băng chuyền di động được đặt trên một khung kim loại. Băng chuyền sẽ di chuyển theo tốc độ được chọn bởi người tập thông qua các nút điều khiển trên bàn tay hoặc màn hình cảm ứng. Máy chạy bộ điện Fitness có nhiều tính năng khác nhau để tăng cường trải nghiệm tập luyện của người dùng, bao gồm màn hình hiển thị các thông số như tốc độ, quãng đường, thời gian tập luyện, năng lượng tiêu thụ, cường độ và độ dốc. Ngoài ra, nhiều máy chạy bộ điện Fitness cũng có các tính năng giảm xóc và đàn hồi, giúp giảm tác động lên khớp và gối của người tập.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Treadmill Exercise
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        11/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 8 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Horizontal leg press sled</h2>
+                                <p class="item-intro text-muted">Máy đạp chân ngang</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/máy đạp chân ngang.jpg" alt="..." />
+                                <p>Máy đạp chân ngang là một thiết bị tập luyện thể dục giúp tập trung vào vùng đùi, hông và mông. Máy đạp chân ngang thường có đệm ngồi và đế chân rộng, cho phép người tập đặt chân lên đó và thực hiện các động tác đẩy chân với trọng lượng được thiết lập trước đó. Ngoài ra, máy đạp chân ngang còn có đồng hồ đo thời gian, tốc độ, quãng đường và đốt cháy calo. Một số loại máy đạp chân ngang còn tích hợp thêm chức năng tăng cường cơ thể, giúp người tập có thể tăng cường sức mạnh và sức bền cơ thể.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Functional Training
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        19/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 9 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="~/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Cardiovascular Exercise</h2>
+                                <p class="item-intro text-muted">Máy tập thể dục xe đạp Air Bike</p>
+                                <img class="img-fluid d-block mx-auto" src="~/assets/img/portfolio/xe đạp tập thể dục Air Bike.jpg" alt="..." />
+                                <p>Máy tập thể dục xe đạp là một thiết bị tập thể dục giúp người dùng tập luyện thể lực và giảm cân. Máy tập thể dục xe đạp thường được sử dụng trong phòng tập gym hoặc tại nhà. Nó được thiết kế với một chiếc ghế và một bánh xe đặt trước và sau để người dùng có thể ngồi và đạp xe. Máy tập thể dục xe đạp có nhiều tính năng và chế độ tập khác nhau, từ chế độ tập nhẹ đến tập cường độ cao. Nó còn có thể được kết nối với các ứng dụng tập luyện để theo dõi quá trình tập luyện và đạt được mục tiêu sức khỏe của mình.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Gói tập:</strong>
+                                        Cycling
+                                    </li>
+                                    <li>
+                                        <strong>Ngày mua:</strong>
+                                        21/03/2022
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/js/JavaScript.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

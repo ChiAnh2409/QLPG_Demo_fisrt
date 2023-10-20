@@ -1,0 +1,63 @@
+﻿@model QLPG.ViewModel.MultipleData
+@{
+    ViewBag.Title = "SuaND";
+    Layout = null;
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sửa Người Dùng</title>
+    <link href="~/css/goitap.css" rel="stylesheet" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Sửa Người Dùng
+        </div>
+        <form method="post" action="SuaND">
+            @foreach (var item in Model.accounts)
+            {
+                <label>Tên Quyền</label>
+                <select id="disease-list" name="id_Role">
+                    @foreach (var item2 in Model.roles)
+                    {
+                        <option value="@item2.id_Role" @(item2.id_Role == item.id_Role ? "selected" : "")>@item2.Roles1</option>
+                    }
+                </select>
+                <div class="field">
+                    <input type="text" name="TenNV" value="@item.TenNV">
+                    <label>Tên Nhân viên</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="SDT" value="@item.SDT">
+                    <label>Số Điện Thoại</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="Email" value="@item.Email">
+                    <label>Email</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="Username" value="@item.Username">
+                    <label>Tên đăng nhập</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="Pass" value="@item.Pass">
+                    <label>Password</label>
+                </div>
+                <div class="field">
+                    <input type="submit" value="Sửa">
+                </div>
+                <div class="signup-link">
+                    <a href="/User/NguoiDung">Quay về trang chủ</a>
+                </div>
+                @*<label>Mã người dùng</label>*@
+                <div class="field">
+                    <input style="display:none" type="text" name="id" value="@item.id" readonly>
+                </div>
+            }
+        </form>
+    </div>
+</body>
+</html>

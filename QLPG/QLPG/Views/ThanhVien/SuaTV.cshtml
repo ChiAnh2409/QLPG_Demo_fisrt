@@ -1,0 +1,61 @@
+﻿@model QLPG.Models.ThanhVien
+@{
+    ViewBag.Title = "SuaTV";
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sửa Thành Viên</title>
+    <link href="~/css/goitap.css" rel="stylesheet" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Sửa Thành Viên
+        </div>
+        <form method="post" action="SuaTV" enctype="multipart/form-data">
+                <div style="text-align: center; color: royalblue; height: 100px">
+                    <label>Chọn phần tập</label>
+                    <div class="field">
+                        <select class="form-control" name="TenGT" style="width: 300px; height: 40px;">
+                            <option>Treadmill Exercise</option>
+                            <option>Cycling</option>
+                            <option>Functional Training</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="text" name="TenTV" value="@Model.TenTV">
+                    <label>Tên thành viên</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="SDT" value="@Model.SDT">
+                    <label>Số điện thoại</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="Email" value="@Model.Email">
+                    <label>Email</label>
+                </div>
+                <div class="field">
+                    <input type="submit" value="Sửa">
+                </div>
+                <div class="signup-link">
+                    <a href="/ThanhVien/ThanhVien">Quay về</a>
+                </div>
+                @*<label>Mã Thành Viên</label>*@
+                <div class="field">
+                    <input style="display:none" name="id_TV" value="@Model.id_TV" readonly>
+                </div>
+                @*<label>Ngày Tạo</label>*@
+                <div class="field">
+                    <input style="display:none" name="NgayTao" value="@Model.NgayTao">
+                </div>
+
+            </form>
+    </div>
+</body>
+</html>

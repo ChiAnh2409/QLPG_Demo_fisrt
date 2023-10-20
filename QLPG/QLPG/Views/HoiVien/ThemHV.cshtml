@@ -1,0 +1,52 @@
+﻿@model QLPG.ViewModel.MultipleData
+@{
+    ViewBag.Title = "ThemHV";
+    Layout = null;
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thêm Hội Viên</title>
+    <link href="~/css/goitap.css" rel="stylesheet" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Thêm Hội Viên
+        </div>
+        <form method="post" action="ThemHV" enctype="multipart/form-data">
+            <div>
+                <label>Tên Hội Viên</label>
+                <select id="disease-list" name="id_TV">
+                    @foreach (var item in Model.vien)
+                    {
+                        <option value="@item.id_TV"> @item.TenTV </option>
+                    }
+                </select>
+            </div>
+            <div class="field">
+                <input type="date" name="NgaySinh">
+                <label>Ngày sinh</label>
+            </div>
+            <div class="field">
+                <input type="text" name="CCCD">
+                <label>Căn cước công dân</label>
+            </div>
+            <div class="field">
+                <input type="file" name="HinhAnh">
+                <label>Hình Ảnh</label>
+            </div>
+            <div class="field">
+                <input type="submit" value="Thêm">
+            </div>
+            <div class="signup-link">
+                <a href="/HoiVien/HoiVien">Quay về</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Đăng nhập Page";
+    Layout = null;
+}
+
+<!-- Favicon-->
+<head>
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico" />
+    <title>Login Website Gym Fish</title>
+</head>
+<link href="~/css/Dangnhap.css" rel="stylesheet" />
+<div class="wrapper">
+    <div class="logo">
+        <img src="~/assets/img/logos/;000.jpg" />
+    </div>
+    <div class="text-center mt-4 name">
+        Login
+    </div>
+    <form method="post" action="Dangnhap" class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="Username" id="userName" placeholder="Username">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="Pass" id="pwd" placeholder="Password">
+        </div>
+        <button type="submit" class="btn mt-3">Đăng nhập</button>
+    </form>
+    <div class="text-center mt-4 name ">
+        <a href="/Account/Index">Thoát đăng nhập</a>
+    </div>
+    @Html.ValidationSummary()
+</div>
+
+

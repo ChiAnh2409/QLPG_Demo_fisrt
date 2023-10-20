@@ -1,0 +1,44 @@
+﻿@model QLPG.Models.GoiTap
+@{
+    ViewBag.Title = "ThemGT";
+    Layout = null;
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thêm Gói Tập</title>
+
+    <link href="~/css/goitap.css" rel="stylesheet" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Thêm Gói tập
+        </div>
+        <form method="post" action="ThemGT">
+
+            <div class="field">
+                <input type="text" name="TenGoiTap">
+                <label>Tên Gói Tập</label>
+            </div>
+            <div class="field">
+                <input type="date" name="ThoiGianHieuLuc">
+                <label>Thời gian hiệu lực</label>
+            </div>
+            <div class="field">
+                <input type="number" name="ChiPhi">
+                <label>Chi phí</label>
+            </div>
+            <div class="field">
+                <input type="submit" value="Thêm">
+            </div>
+            <div class="signup-link">
+                <a href="/GoiTap/Goitap">Quay về</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

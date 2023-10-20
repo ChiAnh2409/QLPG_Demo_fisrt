@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c2fdf6a58d104398ba664965f793cf5c" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="QLPG1Model.Account" Width="1.5" PointX="8.625" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPG1Model.BuoiTap" Width="1.5" PointX="6.125" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPG1Model.ChiTietDK_GoiTap" Width="1.5" PointX="6.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPG1Model.GoiTap" Width="1.5" PointX="3.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPG1Model.HoiVien" Width="1.5" PointX="3.625" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPG1Model.Roles" Width="1.5" PointX="10.125" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPG1Model.sysdiagrams" Width="1.5" PointX="12.625" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPG1Model.ThanhVien" Width="1.5" PointX="1" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="QLPG1Model.FK__Account__id_Role__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPG1Model.FK__BuoiTap__id_HV__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPG1Model.FK__ChiTietDK__id_GT__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPG1Model.FK__ChiTietDK__id_HV__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPG1Model.FK__HoiVien__id_TV__2D27B809" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

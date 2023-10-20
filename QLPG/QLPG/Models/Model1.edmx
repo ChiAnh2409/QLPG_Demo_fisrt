@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QLPG1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_Role" Type="int" />
+          <Property Name="Username" Type="varchar" MaxLength="500" />
+          <Property Name="TenNV" Type="nvarchar" MaxLength="500" />
+          <Property Name="SDT" Type="char" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="500" />
+          <Property Name="Pass" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="BuoiTap">
+          <Key>
+            <PropertyRef Name="id_BT" />
+          </Key>
+          <Property Name="id_BT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_HV" Type="int" />
+          <Property Name="NgayThamGia" Type="datetime" />
+          <Property Name="DaDiemDanh" Type="bit" />
+        </EntityType>
+        <EntityType Name="ChiTietDK_GoiTap">
+          <Key>
+            <PropertyRef Name="id_CTDKGoiTap" />
+          </Key>
+          <Property Name="id_CTDKGoiTap" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_GT" Type="int" />
+          <Property Name="id_HV" Type="int" />
+          <Property Name="NgayBatDau" Type="datetime" />
+          <Property Name="NgayKetThuc" Type="datetime" />
+          <Property Name="ThanhTien" Type="money" />
+        </EntityType>
+        <EntityType Name="GoiTap">
+          <Key>
+            <PropertyRef Name="id_GT" />
+          </Key>
+          <Property Name="id_GT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenGoiTap" Type="nvarchar" MaxLength="700" />
+          <Property Name="ThoiGianHieuLuc" Type="datetime" />
+          <Property Name="ChiPhi" Type="money" />
+        </EntityType>
+        <EntityType Name="HoiVien">
+          <Key>
+            <PropertyRef Name="id_HV" />
+          </Key>
+          <Property Name="id_HV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_TV" Type="int" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="255" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="CCCD" Type="char" MaxLength="100" />
+          <Property Name="TinhTrang" Type="bit" />
+          <Property Name="NgayGiaNhap" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id_Role" />
+          </Key>
+          <Property Name="id_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Roles" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="ThanhVien">
+          <Key>
+            <PropertyRef Name="id_TV" />
+          </Key>
+          <Property Name="id_TV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTV" Type="nvarchar" MaxLength="500" />
+          <Property Name="SDT" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="500" />
+          <Property Name="TenGT" Type="nvarchar" MaxLength="700" />
+          <Property Name="NgayTao" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__Account__id_Role__267ABA7A">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id_Role" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BuoiTap__id_HV__300424B4">
+          <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="0..1" />
+          <End Role="BuoiTap" Type="Self.BuoiTap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoiVien">
+              <PropertyRef Name="id_HV" />
+            </Principal>
+            <Dependent Role="BuoiTap">
+              <PropertyRef Name="id_HV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDK__id_GT__32E0915F">
+          <End Role="GoiTap" Type="Self.GoiTap" Multiplicity="0..1" />
+          <End Role="ChiTietDK_GoiTap" Type="Self.ChiTietDK_GoiTap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GoiTap">
+              <PropertyRef Name="id_GT" />
+            </Principal>
+            <Dependent Role="ChiTietDK_GoiTap">
+              <PropertyRef Name="id_GT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDK__id_HV__33D4B598">
+          <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="0..1" />
+          <End Role="ChiTietDK_GoiTap" Type="Self.ChiTietDK_GoiTap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoiVien">
+              <PropertyRef Name="id_HV" />
+            </Principal>
+            <Dependent Role="ChiTietDK_GoiTap">
+              <PropertyRef Name="id_HV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HoiVien__id_TV__2D27B809">
+          <End Role="ThanhVien" Type="Self.ThanhVien" Multiplicity="0..1" />
+          <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThanhVien">
+              <PropertyRef Name="id_TV" />
+            </Principal>
+            <Dependent Role="HoiVien">
+              <PropertyRef Name="id_TV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLPG1ModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BuoiTap" EntityType="Self.BuoiTap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiTietDK_GoiTap" EntityType="Self.ChiTietDK_GoiTap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GoiTap" EntityType="Self.GoiTap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HoiVien" EntityType="Self.HoiVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThanhVien" EntityType="Self.ThanhVien" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Account__id_Role__267ABA7A" Association="Self.FK__Account__id_Role__267ABA7A">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BuoiTap__id_HV__300424B4" Association="Self.FK__BuoiTap__id_HV__300424B4">
+            <End Role="HoiVien" EntitySet="HoiVien" />
+            <End Role="BuoiTap" EntitySet="BuoiTap" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDK__id_GT__32E0915F" Association="Self.FK__ChiTietDK__id_GT__32E0915F">
+            <End Role="GoiTap" EntitySet="GoiTap" />
+            <End Role="ChiTietDK_GoiTap" EntitySet="ChiTietDK_GoiTap" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDK__id_HV__33D4B598" Association="Self.FK__ChiTietDK__id_HV__33D4B598">
+            <End Role="HoiVien" EntitySet="HoiVien" />
+            <End Role="ChiTietDK_GoiTap" EntitySet="ChiTietDK_GoiTap" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HoiVien__id_TV__2D27B809" Association="Self.FK__HoiVien__id_TV__2D27B809">
+            <End Role="ThanhVien" EntitySet="ThanhVien" />
+            <End Role="HoiVien" EntitySet="HoiVien" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLPG1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_Role" Type="Int32" />
+          <Property Name="Username" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TenNV" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Pass" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK__Account__id_Role__267ABA7A" FromRole="Account" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="BuoiTap">
+          <Key>
+            <PropertyRef Name="id_BT" />
+          </Key>
+          <Property Name="id_BT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_HV" Type="Int32" />
+          <Property Name="NgayThamGia" Type="DateTime" Precision="3" />
+          <Property Name="DaDiemDanh" Type="Boolean" />
+          <NavigationProperty Name="HoiVien" Relationship="Self.FK__BuoiTap__id_HV__300424B4" FromRole="BuoiTap" ToRole="HoiVien" />
+        </EntityType>
+        <EntityType Name="ChiTietDK_GoiTap">
+          <Key>
+            <PropertyRef Name="id_CTDKGoiTap" />
+          </Key>
+          <Property Name="id_CTDKGoiTap" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_GT" Type="Int32" />
+          <Property Name="id_HV" Type="Int32" />
+          <Property Name="NgayBatDau" Type="DateTime" Precision="3" />
+          <Property Name="NgayKetThuc" Type="DateTime" Precision="3" />
+          <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="GoiTap" Relationship="Self.FK__ChiTietDK__id_GT__32E0915F" FromRole="ChiTietDK_GoiTap" ToRole="GoiTap" />
+          <NavigationProperty Name="HoiVien" Relationship="Self.FK__ChiTietDK__id_HV__33D4B598" FromRole="ChiTietDK_GoiTap" ToRole="HoiVien" />
+        </EntityType>
+        <EntityType Name="GoiTap">
+          <Key>
+            <PropertyRef Name="id_GT" />
+          </Key>
+          <Property Name="id_GT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenGoiTap" Type="String" MaxLength="700" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianHieuLuc" Type="DateTime" Precision="3" />
+          <Property Name="ChiPhi" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="ChiTietDK_GoiTap" Relationship="Self.FK__ChiTietDK__id_GT__32E0915F" FromRole="GoiTap" ToRole="ChiTietDK_GoiTap" />
+        </EntityType>
+        <EntityType Name="HoiVien">
+          <Key>
+            <PropertyRef Name="id_HV" />
+          </Key>
+          <Property Name="id_HV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_TV" Type="Int32" />
+          <Property Name="HinhAnh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="CCCD" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="TinhTrang" Type="Boolean" />
+          <Property Name="NgayGiaNhap" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BuoiTap" Relationship="Self.FK__BuoiTap__id_HV__300424B4" FromRole="HoiVien" ToRole="BuoiTap" />
+          <NavigationProperty Name="ChiTietDK_GoiTap" Relationship="Self.FK__ChiTietDK__id_HV__33D4B598" FromRole="HoiVien" ToRole="ChiTietDK_GoiTap" />
+          <NavigationProperty Name="ThanhVien" Relationship="Self.FK__HoiVien__id_TV__2D27B809" FromRole="HoiVien" ToRole="ThanhVien" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id_Role" />
+          </Key>
+          <Property Name="id_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Roles1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Account__id_Role__267ABA7A" FromRole="Roles" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ThanhVien">
+          <Key>
+            <PropertyRef Name="id_TV" />
+          </Key>
+          <Property Name="id_TV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTV" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TenGT" Type="String" MaxLength="700" FixedLength="false" Unicode="true" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="HoiVien" Relationship="Self.FK__HoiVien__id_TV__2D27B809" FromRole="ThanhVien" ToRole="HoiVien" />
+        </EntityType>
+        <Association Name="FK__Account__id_Role__267ABA7A">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id_Role" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BuoiTap__id_HV__300424B4">
+          <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="0..1" />
+          <End Role="BuoiTap" Type="Self.BuoiTap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoiVien">
+              <PropertyRef Name="id_HV" />
+            </Principal>
+            <Dependent Role="BuoiTap">
+              <PropertyRef Name="id_HV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDK__id_GT__32E0915F">
+          <End Role="GoiTap" Type="Self.GoiTap" Multiplicity="0..1" />
+          <End Role="ChiTietDK_GoiTap" Type="Self.ChiTietDK_GoiTap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GoiTap">
+              <PropertyRef Name="id_GT" />
+            </Principal>
+            <Dependent Role="ChiTietDK_GoiTap">
+              <PropertyRef Name="id_GT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDK__id_HV__33D4B598">
+          <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="0..1" />
+          <End Role="ChiTietDK_GoiTap" Type="Self.ChiTietDK_GoiTap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoiVien">
+              <PropertyRef Name="id_HV" />
+            </Principal>
+            <Dependent Role="ChiTietDK_GoiTap">
+              <PropertyRef Name="id_HV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HoiVien__id_TV__2D27B809">
+          <End Role="ThanhVien" Type="Self.ThanhVien" Multiplicity="0..1" />
+          <End Role="HoiVien" Type="Self.HoiVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThanhVien">
+              <PropertyRef Name="id_TV" />
+            </Principal>
+            <Dependent Role="HoiVien">
+              <PropertyRef Name="id_TV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLPG1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account" EntityType="Self.Account" />
+          <EntitySet Name="BuoiTap" EntityType="Self.BuoiTap" />
+          <EntitySet Name="ChiTietDK_GoiTap" EntityType="Self.ChiTietDK_GoiTap" />
+          <EntitySet Name="GoiTap" EntityType="Self.GoiTap" />
+          <EntitySet Name="HoiVien" EntityType="Self.HoiVien" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="ThanhVien" EntityType="Self.ThanhVien" />
+          <AssociationSet Name="FK__Account__id_Role__267ABA7A" Association="Self.FK__Account__id_Role__267ABA7A">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BuoiTap__id_HV__300424B4" Association="Self.FK__BuoiTap__id_HV__300424B4">
+            <End Role="HoiVien" EntitySet="HoiVien" />
+            <End Role="BuoiTap" EntitySet="BuoiTap" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDK__id_GT__32E0915F" Association="Self.FK__ChiTietDK__id_GT__32E0915F">
+            <End Role="GoiTap" EntitySet="GoiTap" />
+            <End Role="ChiTietDK_GoiTap" EntitySet="ChiTietDK_GoiTap" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDK__id_HV__33D4B598" Association="Self.FK__ChiTietDK__id_HV__33D4B598">
+            <End Role="HoiVien" EntitySet="HoiVien" />
+            <End Role="ChiTietDK_GoiTap" EntitySet="ChiTietDK_GoiTap" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HoiVien__id_TV__2D27B809" Association="Self.FK__HoiVien__id_TV__2D27B809">
+            <End Role="ThanhVien" EntitySet="ThanhVien" />
+            <End Role="HoiVien" EntitySet="HoiVien" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLPG1ModelStoreContainer" CdmEntityContainer="QLPG1Entities">
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="QLPG1Model.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_Role" ColumnName="id_Role" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BuoiTap">
+            <EntityTypeMapping TypeName="QLPG1Model.BuoiTap">
+              <MappingFragment StoreEntitySet="BuoiTap">
+                <ScalarProperty Name="id_BT" ColumnName="id_BT" />
+                <ScalarProperty Name="id_HV" ColumnName="id_HV" />
+                <ScalarProperty Name="NgayThamGia" ColumnName="NgayThamGia" />
+                <ScalarProperty Name="DaDiemDanh" ColumnName="DaDiemDanh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietDK_GoiTap">
+            <EntityTypeMapping TypeName="QLPG1Model.ChiTietDK_GoiTap">
+              <MappingFragment StoreEntitySet="ChiTietDK_GoiTap">
+                <ScalarProperty Name="id_CTDKGoiTap" ColumnName="id_CTDKGoiTap" />
+                <ScalarProperty Name="id_GT" ColumnName="id_GT" />
+                <ScalarProperty Name="id_HV" ColumnName="id_HV" />
+                <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+                <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GoiTap">
+            <EntityTypeMapping TypeName="QLPG1Model.GoiTap">
+              <MappingFragment StoreEntitySet="GoiTap">
+                <ScalarProperty Name="id_GT" ColumnName="id_GT" />
+                <ScalarProperty Name="TenGoiTap" ColumnName="TenGoiTap" />
+                <ScalarProperty Name="ThoiGianHieuLuc" ColumnName="ThoiGianHieuLuc" />
+                <ScalarProperty Name="ChiPhi" ColumnName="ChiPhi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HoiVien">
+            <EntityTypeMapping TypeName="QLPG1Model.HoiVien">
+              <MappingFragment StoreEntitySet="HoiVien">
+                <ScalarProperty Name="id_HV" ColumnName="id_HV" />
+                <ScalarProperty Name="id_TV" ColumnName="id_TV" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="NgayGiaNhap" ColumnName="NgayGiaNhap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="QLPG1Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="id_Role" ColumnName="id_Role" />
+                <ScalarProperty Name="Roles1" ColumnName="Roles" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QLPG1Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThanhVien">
+            <EntityTypeMapping TypeName="QLPG1Model.ThanhVien">
+              <MappingFragment StoreEntitySet="ThanhVien">
+                <ScalarProperty Name="id_TV" ColumnName="id_TV" />
+                <ScalarProperty Name="TenTV" ColumnName="TenTV" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TenGT" ColumnName="TenGT" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

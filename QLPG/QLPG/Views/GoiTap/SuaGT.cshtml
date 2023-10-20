@@ -1,0 +1,54 @@
+﻿@model QLPG.Models.GoiTap
+@{
+    ViewBag.Title = "SuaGT";
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sửa Gói tập</title>
+    <link href="~/css/goitap.css" rel="stylesheet" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon.ico" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Sửa Gói Tập
+        </div>
+        <form method="post" action="SuaGT">
+
+            <label>Mã gói tập</label>
+            <div class="field">
+                <input type="text" name="id_GT" value="@Model.id_GT" readonly>
+            </div>
+            <div class="field">
+                <input type="text" name="TenGoiTap" value="@Model.TenGoiTap">
+                <label>Tên Gói Tập</label>
+            </div>
+            <div class="field">
+                @if (Model.ThoiGianHieuLuc.HasValue)
+                {
+                    <input type="date" name="ThoiGianHieuLuc" value="@Model.ThoiGianHieuLuc.Value.ToString("yyyy-MM-dd")" />
+                }
+                else
+                {
+                    <<input type="date" name="ThoiGianHieuLuc" />
+                }
+                <label>Thời gian hiệu lực</label>
+            </div>
+            <div class="field">
+                <input type="number" step="0.01" name="ChiPhi" value="@Model.ChiPhi">
+                <label>Chi phí</label>
+            </div>
+            <div class="field">
+                <input type="submit" value="Sửa">
+            </div>
+            <div class="signup-link">
+                <a href="/GoiTap/Goitap">Quay về</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
