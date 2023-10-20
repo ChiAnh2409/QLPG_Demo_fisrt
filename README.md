@@ -1,15 +1,15 @@
 # Demo hoàn tất các chức năng cơ bản.
 # WebApp Quản Lý Phòng Gym
 Use C# ASP.NET, SQL server.
-- Dự án bao gồm:
-- Trang giao diện dành cho mọi người xem thông tin chung về Phòng Gym.
-- Trang giao diện đăng ký tập thử 1 ngày miễn phí 
-- Trang quản lý bao gồm:
-- Quản lý thành viên: chứa thông tin cơ bản.
-- Quản lý hội viên: hiển thị tên gói tập và tình trạng tham gia gói tập của hội viên.
-- Quản lý gói tập: đăng ký gói tập, gói tập (chi phí, thời gian hiệu lực).
-- Quản lý người dùng bao gồm: thông tin của người dùng.
-- Báo cáo thống kê: tình trạng là vẫn chưa hoàn thiện xong chức năng.
++ Dự án bao gồm:
+ - Trang giao diện dành cho mọi người xem thông tin chung về Phòng Gym.
+ - Trang giao diện đăng ký tập thử 1 ngày miễn phí 
+ - Trang quản lý bao gồm:
+ - Quản lý thành viên: chứa thông tin cơ bản.
+ - Quản lý hội viên: hiển thị tên gói tập và tình trạng tham gia gói tập của hội viên.
+ - Quản lý gói tập: đăng ký gói tập, gói tập (chi phí, thời gian hiệu lực).
+ - Quản lý người dùng bao gồm: thông tin của người dùng.
+ - Báo cáo thống kê: tình trạng là vẫn chưa hoàn thiện xong chức năng.
 
 Giao diện trang chủ ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/f173eeff-284f-4727-8543-d63d6874fedc)
 Giao diện các phần tập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/1f36354b-d04f-4c69-a1f9-d180d345b2aa)
