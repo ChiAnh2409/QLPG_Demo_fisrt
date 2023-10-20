@@ -13,9 +13,26 @@ Quản lý người dùng bao gồm: thông tin của người dùng.
 Báo cáo thống kê: tình trạng là vẫn chưa hoàn thiện xong chức năng.
 
 Giao diện trang chủ ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/f173eeff-284f-4727-8543-d63d6874fedc)
+Giao diện các phần tập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/1f36354b-d04f-4c69-a1f9-d180d345b2aa)
+Giao diện các thiết bị tại phòng Gym ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/ff3c5560-5860-4b36-9114-07acbed6d228)
+Giao diện thông tin giai đoạn thành lập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/534e888a-7a6a-48ab-b000-24e9df4287d2)
+Giao diện thông tin Staff ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/8acb5e8e-7b17-4e00-9813-dd609c4bae43)
 Giao diện đăng ký tập thử ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/1fa3f656-d844-448d-a085-b40ae1409e00)
+Giao diện các phần tập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/96524d5a-eb74-4057-b799-e4ca5472237f)
+Giao diện thông tin bổ ích ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/cca3ca4d-612b-42ba-a9af-1d08306714dc)
+Click vào để xem chi tiết ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/ae89541a-5dca-4909-bea7-b1e210357968)
+Chi tiết Treadmill Exercise bao gồm: 
+ - Thực đơn ăn uống phù hợp cho Treadmill Exercise  ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/dd5825c2-6a54-470b-81d9-9bc85f23f797)
+ - Lợi ích của Treadmill Exercise ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/6635efc4-b47c-4a81-a495-14bf3a997ee4)
 Giao diện login 
+
 ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/5d47ceaa-959b-4c3e-8420-466691089a8b)
-Giao diện gói tập 
+Giao diện trang quản lý ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/f57f30de-7062-44bb-8936-91a791eb9133)
+Giao diện trang quản lý gói tập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/db7dbb60-555a-4351-9487-6f1526799b23)
+Giao diện trang Đăng Ký Gói Tập ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/bccd2739-288e-4229-8e1c-7767b9405415)
+Giao diện trang quản lý Thành Viên ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/6a5cee4f-fda8-45be-aec3-c538cb919c3d)
+Giao diện trang quản lý Hội Viên ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/e14402d0-f230-417d-aa7f-1f169ebc9d13)
+Giao diện trang quản lý Người Dùng ![image](https://github.com/ChiAnh2409/QLPG_Demo_fisrt/assets/118975118/221e3d22-67c7-4418-811c-5262e82eb404)
+
 
 
